@@ -1,0 +1,155 @@
+/* Base wrapper still exists to apply font etc. */
+.careers {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Banner Section */
+.careers-banner {
+  background-image: url('career-banner.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.careers-banner::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.overlay-text {
+  z-index: 2;
+  max-width: 800px;
+  padding: 20px 40px;
+  border-radius: 12px;
+}
+.overlay-text {
+  z-index: 2;
+  max-width: 800px;
+  padding: 20px 40px;
+  /* background-color: rgba(0, 0, 0, 0.5); Improves readability */
+  border-radius: 12px;
+  text-align: center;
+}
+
+.overlay-text h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.overlay-text p {
+  font-size: 1.2rem;
+  color: #ddd;
+  font-weight: 500;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+  .overlay-text h1 {
+    font-size: 2rem;
+  }
+
+  .overlay-text p {
+    font-size: 1rem;
+  }
+}
+
+/* Section Wrapper */
+.full-width-section {
+  width: 100%;
+  padding: 60px 20px;
+  box-sizing: border-box;
+}
+
+.section-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Section Titles and Text */
+.section-inner h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  color: #15157d;
+  margin-bottom: 30px;
+}
+
+.section-inner p,
+.section-inner ul li {
+  font-size: 1.05rem;
+  color: #0a0a0a;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.section-inner ul {
+  padding-left: 20px;
+}
+
+/* Unique Backgrounds */
+.intro { background-color: #f0f4ff; }
+.why-us { background-color: #fff8e1; }
+.openings { background-color: #e8fff1; }
+.open-call { background-color: #fef3f3; }
+.culture { background-color: #f1f1f1; }
+
+/* Job Listings */
+.job-listing {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+@media (min-width: 768px) {
+  .job-listing {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .job-listing {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.job-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.job-card:hover {
+  transform: translateY(-5px);
+}
+
+.job-card h3 {
+  font-size: 1.2rem;
+  color: #0a0a0a;
+  margin-bottom: 10px;
+}
+
+.job-card p {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}

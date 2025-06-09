@@ -1,0 +1,152 @@
+/* === Header === */
+.header {
+  background-color: rgba(255, 255, 255, 1);
+  height: 80px;
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.4s ease;
+}
+
+.header.transparent {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+}
+
+.header-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo img {
+  height: 50px; /* Adjust as needed */
+  width: auto;
+  display: block;
+}
+
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+
+/* === Navigation === */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-left a,
+.nav-right a {
+  color: #0a0a0a;
+  margin-left: 20px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-left a:hover,
+.nav-right a:hover {
+  color: #fb71a2;
+}
+
+.contact-btn {
+  border: 2px solid #15157d;
+  padding: 1px 16px;
+  border-radius: 4px;
+  color: #15157d;
+  font-weight: 500;
+}
+
+.nav-left a.active,
+.nav-right a.active {
+  color: #fb71a2;
+  font-weight: 600;
+}
+
+/* === Hamburger Menu === */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  width: 30px;
+  height: 25px;
+  gap: 5px;
+  z-index: 101;
+}
+
+.menu-toggle div {
+  height: 3px;
+  background-color: #0a0a0a;
+  transition: all 0.4s ease;
+}
+
+/* Animated toggle effect */
+.menu-toggle.open div:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.open div:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open div:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* === Responsive Nav Dropdown === */
+@media (max-width: 768px) {
+  .nav {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px 10px;
+    transform: translateY(-20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease-in-out;
+  }
+
+  .nav.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-left,
+  .nav-right {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-left a,
+  .nav-right a {
+    margin: 10px 0;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}

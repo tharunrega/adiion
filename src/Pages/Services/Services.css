@@ -1,0 +1,270 @@
+/* === Banner Section === */
+.services-page__banner {
+  background-size: cover;
+  background-position: center;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+  margin: 0;
+}
+
+.services-page__banner-overlay {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.services-page__banner-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+.services-page__banner-content h1 {
+  font-size: 2.8rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.services-page__banner-content p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #ddd;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* === Introduction Section === */
+.services-page__intro {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(to right, #f4f6fa, #ffffff);
+}
+
+.services-page__intro h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #15157d;
+  margin-bottom: 20px;
+}
+
+.services-page__intro h2 span {
+  color: #00c9ff;
+}
+
+.services-page__intro p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* === Services Grid === */
+.services-page__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 60px 30px;
+  background-color: #e6ebf5;
+  justify-content: center;
+}
+
+/* === Individual Card === */
+.services-page__card {
+  background-color: #1c1c2b;
+  color: #ffffff;
+  border-radius: 16px;
+  padding: 12px 40px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: visible;
+  width: 80%;
+  max-width: 650px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, height 0.4s ease;
+  height: 80px; /* fixed height collapsed */
+}
+
+/* Shadow intensifies and scales up when active */
+.services-page__card.active {
+  height: auto;
+  transform: scale(1.02);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
+}
+
+/* Left / Right alignment of cards alternating */
+.services-page__card:nth-child(odd) {
+  justify-self: start;
+}
+
+.services-page__card:nth-child(even) {
+  justify-self: end;
+}
+
+/* Card Content (icon + title + toggle) */
+.services-page__card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Left side: Icon and Title */
+.services-page__card-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.services-page__icon {
+  font-size: 2.4rem;
+  color: #00c9ff;
+}
+
+.services-page__title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  white-space: nowrap;
+  margin: 0;
+}
+
+/* Toggle Button */
+.services-page__toggle-btn {
+  font-size: 1.2rem;
+  color: #00c9ff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.services-page__toggle-btn:hover {
+  color: #00eaff;
+  transform: scale(1.1);
+}
+
+/* Description Section */
+.services-page__description {
+  position: absolute;
+  left: 40px;
+  right: 40px;
+  top: 80px;
+  background-color: #1c1c2b;
+  border-radius: 0 0 16px 16px;
+  padding: 15px 20px;
+  color: #dddddd;
+  font-size: 1rem;
+  line-height: 1.5;
+  list-style: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+/* When card is active, description expands */
+.services-page__card.active .services-page__description {
+  max-height: 500px;
+  position: relative;
+  top: auto;
+  box-shadow: none;
+  padding: 15px 5px 0 5px;
+}
+
+/* Custom bullet points */
+.services-page__description li {
+  position: relative;
+  padding-left: 26px;
+  margin-bottom: 8px;
+}
+
+.services-page__description li::before {
+  content: "➤";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  color: #00c9ff;
+  font-size: 1rem;
+}
+
+/* === CTA Section === */
+.services-page__cta {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(to right, #15157d, #4343a5);
+  color: white;
+}
+
+.services-page__cta-button {
+  display: inline-block;
+  margin-top: 20px;
+  background: white;
+  color: #15157d;
+  padding: 10px 24px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.services-page__cta-button:hover {
+  background: #f1f1f1;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .services-page__grid {
+    grid-template-columns: 1fr;
+    padding: 40px 20px;
+  }
+
+  .services-page__card {
+    width: 100%;
+    max-width: none;
+    height: auto; /* let cards expand naturally on mobile */
+  }
+
+  .services-page__card:nth-child(odd),
+  .services-page__card:nth-child(even) {
+    justify-self: center;
+  }
+
+  .services-page__icon {
+    font-size: 2.4rem;
+  }
+
+  .services-page__title {
+    font-size: 1.2rem;
+  }
+
+  .services-page__toggle-btn {
+    font-size: 1.5rem;
+  }
+
+  .services-page__card-left {
+    gap: 15px;
+  }
+
+  .services-page__description {
+    position: relative;
+    top: auto;
+    max-height: none;
+    padding: 15px 5px 0 5px;
+    box-shadow: none;
+  }
+}
